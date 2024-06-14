@@ -10,30 +10,30 @@ const Services = () => {
             <SectionTitle>Our Services</SectionTitle>
             <SectionSubtitle>We provide great services for our customers based on needs</SectionSubtitle>
             <ServiceCards>
-                <ServiceCard>
+                <ServiceCardGreen>
                     <ServiceIcon src={Analysis} alt="Dream Analysis" />
                     <ServiceTitle>Dream Analysis</ServiceTitle>
                     <ServiceDescription>
                         Unlock the meaning behind your dreams with our advanced AI-powered analysis.
                     </ServiceDescription>
                     <LearnMoreButton>Learn more</LearnMoreButton>
-                </ServiceCard>
-                <ServiceCard>
+                </ServiceCardGreen>
+                <ServiceCardBlue>
                     <ServiceIcon src={Trends} alt="Sleep Trends" />
                     <ServiceTitle>Sleep Trends</ServiceTitle>
                     <ServiceDescription>
                         Track and visualize your sleep patterns over time.
                     </ServiceDescription>
                     <LearnMoreButton>Learn more</LearnMoreButton>
-                </ServiceCard>
-                <ServiceCard>
+                </ServiceCardBlue>
+                <ServiceCardRed>
                     <ServiceIcon src={Integrate} alt="App Integrations" />
                     <ServiceTitle>App Integrations</ServiceTitle>
                     <ServiceDescription>
                         Connect with apps like Apple HealthKit and Oura Ring.
                     </ServiceDescription>
                     <LearnMoreButton>Learn more</LearnMoreButton>
-                </ServiceCard>
+                </ServiceCardRed>
             </ServiceCards>
         </ServicesContainer>
     );
@@ -42,7 +42,7 @@ const Services = () => {
 const ServicesContainer = styled.div`
     text-align: center;
     padding: 50px;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.colors.danger};
 `;
 
 const SectionTitle = styled.h2`
@@ -51,6 +51,7 @@ const SectionTitle = styled.h2`
 
 const SectionSubtitle = styled.p`
     margin: 20px 0;
+    ${(props) => props.theme.colors.danger};
 `;
 
 const ServiceCards = styled.div`
@@ -60,16 +61,42 @@ const ServiceCards = styled.div`
 `;
 
 const ServiceCard = styled.div`
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 30%;
-    text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-10px);
+  }  
+
 `;
+const ServiceCardRed = styled(ServiceCard)`
+background-color:${(props) => props.theme.colors.thirdary};
+  
+`;
+const ServiceCardGreen = styled(ServiceCard)`
+background-color:${(props) => props.theme.colors.secondary};
+  
+`;
+const ServiceCardBlue = styled(ServiceCard)`
+background-color:${(props) => props.theme.colors.primary};
+  
+`;
+
+
 
 const ServiceIcon = styled.img`
     width: 100px;
     height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 20px;
 `;
 
@@ -80,15 +107,19 @@ const ServiceTitle = styled.h3`
 
 const ServiceDescription = styled.p`
     margin-bottom: 20px;
+    color: ;
 `;
 
 const LearnMoreButton = styled.button`
     background-color: #88C7D6;
-    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    &:hover {
+        background-color: ${(props) => props.theme.colors.primary};
+        color: ${(props) => props.theme.colors.success};
+      }
 `;
 
 export default Services;

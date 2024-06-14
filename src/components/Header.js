@@ -7,7 +7,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.danger};
   padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
@@ -15,11 +15,11 @@ const Nav = styled.nav`
 const Logo = styled(Link)`
   font-size: 24px;
   font-weight: bold;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.success};
   text-decoration: none;
 
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 
@@ -29,41 +29,41 @@ const NavMenu = styled.div`
 `;
 
 const NavItem = styled(Link)`
-  margin: 0 10px;
+  margin: 0 20px;
   text-decoration: none;
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 16px;
+  color: ${(props) => props.theme.colors.success};
+  font-size: 22px;
 
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 
 const LoginButton = styled(Link)`
   padding: 5px 10px;
   border: none;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.success};
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondary};
+    background-color: ${(props) => props.theme.colors.primary};
   }
 `;
 
 const Header = () => {
   return (
     <Nav>
-      <Logo to="/">DreamInsight.io</Logo>
+      <Logo to="/">Dream-Insight</Logo>
       <NavMenu>
         <NavItem to="/">Home</NavItem>
         <NavItem to="/dashboard">Features</NavItem>
         <NavItem to="/about">About</NavItem>
-        <NavItem to="/contact">Contact</NavItem>
+        <NavItem to="/contactus">Contact</NavItem>
       </NavMenu>
-      <LoginButton to="/login">Sign Up / Login</LoginButton>
+      <LoginButton to="/Signup-Login">Sign Up / Login</LoginButton>
     </Nav>
   );
 };

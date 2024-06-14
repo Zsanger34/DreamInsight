@@ -23,7 +23,7 @@ const Testimonials = () => {
 const TestimonialsContainer = styled.div`
     text-align: center;
     padding: 50px;
-    background-color: #f9f9f9;
+    background-color: ${(props) => props.theme.colors.danger};
 `;
 
 const SectionTitle = styled.h2`

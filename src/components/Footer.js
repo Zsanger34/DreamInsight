@@ -1,103 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterContent>
-                <FooterLogo>DreamInsight.io</FooterLogo>
-                <FooterDescription>With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</FooterDescription>
-                <FooterLinks>
-                    <FooterColumn>
-                        <FooterTitle>Company</FooterTitle>
-                        <FooterLink href="#">About us</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#">Press</FooterLink>
-                        <FooterLink href="#">Blog</FooterLink>
-                    </FooterColumn>
-                    <FooterColumn>
-                        <FooterTitle>Product</FooterTitle>
-                        <FooterLink href="#">Features</FooterLink>
-                        <FooterLink href="#">Pricing</FooterLink>
-                        <FooterLink href="#">News</FooterLink>
-                        <FooterLink href="#">Helpdesk</FooterLink>
-                        <FooterLink href="#">Support</FooterLink>
-                    </FooterColumn>
-                    <FooterColumn>
-                        <FooterTitle>Services</FooterTitle>
-                        <FooterLink href="#">Digital Marketing</FooterLink>
-                        <FooterLink href="#">Content Writing</FooterLink>
-                        <FooterLink href="#">SEO for Business</FooterLink>
-                        <FooterLink href="#">UI/UX</FooterLink>
-                    </FooterColumn>
-                    <FooterColumn>
-                        <FooterTitle>Legal</FooterTitle>
-                        <FooterLink href="#">Privacy Policy</FooterLink>
-                        <FooterLink href="#">Terms & Conditions</FooterLink>
-                    </FooterColumn>
-                </FooterLinks>
-                <FooterSocial>
-                    <SocialLink href="#"><i className="fab fa-twitter"></i></SocialLink>
-                    <SocialLink href="#"><i className="fab fa-facebook-f"></i></SocialLink>
-                    <SocialLink href="#"><i className="fab fa-linkedin-in"></i></SocialLink>
-                    <SocialLink href="#"><i className="fab fa-instagram"></i></SocialLink>
-                </FooterSocial>
-            </FooterContent>
-        </FooterContainer>
-    );
-};
 
 const FooterContainer = styled.footer`
-    background-color: #2c2c2c;
-    color: #fff;
-    padding: 50px;
-    background-color: ${(props) => props.theme.colors.footercolor};
-`;
-
-const FooterContent = styled.div`
-    text-align: center;
-`;
-
-const FooterLogo = styled.h2`
-    font-size: 24px;
-    margin-bottom: 20px;
-`;
-
-const FooterDescription = styled.p`
-    margin-bottom: 20px;
-`;
-
-const FooterLinks = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.footercolor};
+  color: #fff;
+  padding: 40px 50px; /* Increase padding for better spacing */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 `;
 
 const FooterColumn = styled.div`
-    max-width: 200px;
+  flex: 1;
+  margin: 20px;
+  min-width: 200px; /* Ensure columns do not shrink too small */
 `;
 
 const FooterTitle = styled.h3`
-    font-size: 18px;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
 `;
 
-const FooterLink = styled.a`
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
+const FooterItem = styled.div`
+  margin: 5px 0;
 `;
 
-const FooterSocial = styled.div`
-    margin-top: 20px;
+const Footer = () => {
+  return (
+    <FooterContainer>
+      <FooterColumn>
+        <FooterTitle>Dream-Insight</FooterTitle>
+        <FooterItem>Empowering you to decode your dreams with advanced AI technology. Explore our tools and insights to better understand your subconscious mind. Your journey to self-discovery starts here.</FooterItem>
+        <FooterItem>
+          <SocialLinks>
+            <SocialIcon href="#"><i className="fab fa-twitter"></i></SocialIcon>
+            <SocialIcon href="#"><i className="fab fa-facebook-f"></i></SocialIcon>
+            <SocialIcon href="#"><i className="fab fa-instagram"></i></SocialIcon>
+            <SocialIcon href="#"><i className="fab fa-linkedin-in"></i></SocialIcon>
+          </SocialLinks>
+        </FooterItem>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterTitle>Company</FooterTitle>
+        <FooterItem>About us</FooterItem>
+        <FooterItem>Contact us</FooterItem>
+        <FooterItem>Careers</FooterItem>
+        <FooterItem>Press</FooterItem>
+        <FooterItem>Blog</FooterItem>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterTitle>Product</FooterTitle>
+        <FooterItem>Features</FooterItem>
+        <FooterItem>Pricing</FooterItem>
+        <FooterItem>News</FooterItem>
+        <FooterItem>Help desk</FooterItem>
+        <FooterItem>Support</FooterItem>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterTitle>Services</FooterTitle>
+        <FooterItem>Digital Marketing</FooterItem>
+        <FooterItem>Content Writing</FooterItem>
+        <FooterItem>SEO for Business</FooterItem>
+        <FooterItem>UI & UX</FooterItem>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterTitle>Legal</FooterTitle>
+        <FooterItem>Privacy Policy</FooterItem>
+        <FooterItem>Terms & Conditions</FooterItem>
+      </FooterColumn>
+    </FooterContainer>
+  );
+};
+
+const SocialLinks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 150px; /* Adjust width as needed */
+  margin-top: 20px;
 `;
 
-const SocialLink = styled.a`
-    color: #fff;
-    margin-right: 10px;
-    font-size: 18px;
-    text-decoration: none;
+const SocialIcon = styled.a`
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 export default Footer;

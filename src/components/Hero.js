@@ -9,9 +9,10 @@ const Hero = () => {
             <HeroContent>
                 <Title>Welcome to DreamInsight</Title>
                 <Subtitle>
-                    Discover the deeper meanings of your dreams with DreamInsight. Our AI technology provides personalized insights and trends. Sign up now to start your journey!
+                    Discover the deeper meanings of your dreams with DreamInsight.
+                     AI technology provides personalized insights and trends. Sign up now to start your journey!
                 </Subtitle>
-                <CTAButton to="/login">Sign Up / Login</CTAButton>
+                <CTAButton to="/Signup-Login">Sign Up / Login</CTAButton>
             </HeroContent>
             <HeroImage src={Dream} alt="Dream Image" />
         </HeroContainer>
@@ -31,17 +32,18 @@ const HeroContent = styled.div`
 
 const Title = styled.h1`
     font-size: 48px;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.success};
 `;
 
 const Subtitle = styled.p`
     margin: 20px 0;
-    color: ${(props) => props.theme.colors.primary};
+    font-size: 25px;
+    color: ${(props) => props.theme.colors.success};
 `;
 
 const CTAButton = styled(Link)`
     padding: 10px 20px;
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.success};
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -49,7 +51,7 @@ const CTAButton = styled(Link)`
     text-decoration: none;
 
     &:hover {
-        background-color: ${(props) => props.theme.colors.success};
+        background-color: ${(props) => props.theme.colors.primary};
     }
 `;
 
