@@ -36,3 +36,5 @@ jobs:
         script: |
           echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker pull zsanger/dreaminsight:latest
           echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose -f /home/sange/DreamInsight/docker-compose.yml up -d
+          sudo docker info
+          sudo docker-compose --version
