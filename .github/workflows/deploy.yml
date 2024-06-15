@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -29,12 +29,10 @@ jobs:
     - name: SSH and deploy
       uses: appleboy/ssh-action@v0.1.2
       with:
-        host: ${{ secrets.NGROK_HOST }}
-        port: ${{ secrets.NGROK_PORT }}
+        host: ${{ secrets.PI_HOST }}
+        port: 22
         username: sange
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
           echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker pull zsanger/dreaminsight:latest
           echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose -f /home/sange/DreamInsight/docker-compose.yml up -d
-          sudo docker info
-          sudo docker-compose --version
