@@ -34,5 +34,5 @@ jobs:
         username: sange
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
-          sudo docker pull zsanger/dreaminsight:latest
-          sudo docker-compose -f /home/sange/DreamInsight/docker-compose.yml up -d
+          echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker pull zsanger/dreaminsight:latest
+          echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose -f /home/sange/DreamInsight/docker-compose.yml up -d
