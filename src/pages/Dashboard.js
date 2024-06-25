@@ -1,35 +1,32 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import styled from 'styled-components';
+import Sidebar from '../components/Sidebar';
+import TopNav from '../components/TopNav';
+import MainContent from '../components/MainContent';
+
+const Dashboard = () => {
+  
+    return (
+        <DashboardContainer>
+            <Sidebar />
+            <Content>
+                <TopNav />
+                <MainContent />
+            </Content>
+        </DashboardContainer>
+    );
+};
 
 const DashboardContainer = styled.div`
-  margin-left: 250px;
-  padding-top: 60px;
-  padding-bottom: 60px; /* To avoid overlapping with the footer */
-  min-height: 100vh;
-  background-color: #f1f1f1;
+    display: flex;
+    height: 100vh;
 `;
 
 const Content = styled.div`
-  padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust based on Sidebar width */
 `;
-
-const Dashboard = () => {
-  return (
-    <>
-      <Sidebar />
-      <Navbar />
-      <DashboardContainer>
-        <Content>
-          <h1>Dashboard</h1>
-          {/* Your content here */}
-        </Content>
-      </DashboardContainer>
-      <Footer />
-    </>
-  );
-};
 
 export default Dashboard;
